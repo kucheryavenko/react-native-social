@@ -9,11 +9,11 @@ import {
 } from "react-native";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import { RegistrationScreen } from "./screens";
+import { RegistrationScreen, LoginScreen } from "./screens";
 
 SplashScreen.preventAutoHideAsync();
 
-export default function App() {
+const App = () => {
   const [fontsLoaded] = useFonts({
     "Roboto-Regular": require("./assets/fonts/Roboto-Regular.ttf"),
     "Roboto-Medium": require("./assets/fonts/Roboto-Medium.ttf"),
@@ -38,12 +38,13 @@ export default function App() {
           source={require("./assets/images/social-bg.jpg")}
         >
           <RegistrationScreen />
+          {/* <LoginScreen /> */}
         </ImageBackground>
         <StatusBar style="auto" />
       </View>
     </TouchableWithoutFeedback>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -56,3 +57,5 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
   },
 });
+
+export default App;
